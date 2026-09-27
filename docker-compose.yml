@@ -1,0 +1,13 @@
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    env_file:
+      - config/.env
+    volumes:
+      - ./data_landing:/app/data_landing
+      - ./dbt_ecommerce/target:/app/dbt_ecommerce/target

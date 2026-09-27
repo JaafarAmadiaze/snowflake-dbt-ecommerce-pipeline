@@ -1,0 +1,19 @@
+# Mock Data Generation & Ingestion
+pandas>=2.2.0
+numpy>=1.26.0
+faker>=30.0.0
+
+# Cloud & Snowflake Connectors
+google-cloud-storage>=3.14.0
+snowflake-connector-python[pandas]>=4.7.0
+
+# Transformation & Analytics Engineering
+dbt-core>=1.9.0
+dbt-snowflake>=1.9.0
+
+# Environment Management
+python-dotenv>=1.0.1
+
+# Visual Analytics Layer
+streamlit>=1.64.0
+plotly>=5.24.0

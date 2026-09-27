@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_ecommerce
+    database: ECOMMERCE_DWH
+    schema: RAW
+    tables:
+      - name: RAW_SHOPIFY_ORDERS
+        description: "Payloads JSON bruts des commandes Shopify"
+      - name: RAW_MARKETING_ADS
+        description: "Payloads JSON bruts des métriques publicitaires Meta et Google"

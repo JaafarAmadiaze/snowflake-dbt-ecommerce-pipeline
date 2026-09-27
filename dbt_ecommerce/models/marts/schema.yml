@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension client consolidant l'historique et les dépenses globales."
+    columns:
+      - name: customer_id
+        description: "Clé primaire de la dimension client."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Dimension catalogue produit et coûts de référence."
+    columns:
+      - name: product_id
+        description: "Clé primaire du produit."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: "Table de faits au niveau de la commande avec calcul de la marge brute."
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande."
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Clé étrangère vers dim_customers."
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: gross_revenue
+        description: "Montant total brut de la commande."
+        data_tests:
+          - not_null
+
+  - name: fct_marketing_ads_daily
+    description: "Table de faits quotidienne des campagnes marketing Meta et Google."
+    columns:
+      - name: campaign_id
+        description: "Identifiant de la campagne publicitaire."
+        data_tests:
+          - not_null
+      - name: ad_spend
+        description: "Montant dépensé sur la campagne."
+        data_tests:
+          - not_null

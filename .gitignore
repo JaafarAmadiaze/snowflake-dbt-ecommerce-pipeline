@@ -1,0 +1,18 @@
+# Environnement Python
+venv/
+__pycache__/
+*.pyc
+
+# Fichiers de configuration et secrets
+.env
+config/.env
+
+# Dossiers générés par dbt
+dbt_ecommerce/target/
+dbt_ecommerce/dbt_packages/
+dbt_ecommerce/logs/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store

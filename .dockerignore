@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.env
+dbt_ecommerce/target/
+dbt_ecommerce/logs/
+dbt_ecommerce/dbt_packages/
